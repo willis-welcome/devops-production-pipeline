@@ -1,4 +1,4 @@
-# DevOps CI/CD Pipeline Simulation
+# DevOps Production Pipeline
 
 ## Overview
 This project simulates a real-world CI/CD pipeline based on my experience working in a regulated AWS environment.
