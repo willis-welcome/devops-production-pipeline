@@ -14,17 +14,7 @@ It demonstrates:
 
 ## Architecture
 
-Developer (VS Code)
-    ↓
-GitHub Repository
-    ↓
-Jenkins Pipeline
-    ↓
-Build + Validation (SonarQube simulation)
-    ↓
-Deploy to EC2
-    ↓
-CAT → STAGING → PROD
+Developer (VS Code) → GitHub Repository → Jenkins Pipeline → Build & Validation (SonarQube) → Deploy to EC2 → CAT → STAGING → PROD
 
 ---
 
