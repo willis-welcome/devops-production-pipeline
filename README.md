@@ -1,48 +1,75 @@
-# DevOps Production Pipeline
+# DevOps CI/CD Pipeline Simulation
 
 ## Overview
-This project simulates a real-world DevOps CI/CD pipeline based on my experience supporting production environments.
+This project simulates a real-world CI/CD pipeline based on my experience working in a regulated AWS environment.
 
-It demonstrates how applications are built, deployed, validated, and troubleshot across environments using industry-standard tools.
+It demonstrates:
+- Jenkins-based build and deployment workflow
+- Multi-environment promotion (CAT → staging → production)
+- Application deployment on EC2
+- Troubleshooting scenarios and resolutions
+- Infrastructure provisioning using Terraform
 
 ---
 
 ## Architecture
-GitHub → Jenkins → Docker → EC2 → Validation → Troubleshooting → Kubernetes (Validation)
+
+Developer (VS Code)
+    ↓
+GitHub Repository
+    ↓
+Jenkins Pipeline
+    ↓
+Build + Validation (SonarQube simulation)
+    ↓
+Deploy to EC2
+    ↓
+CAT → STAGING → PROD
 
 ---
 
-## Tools Used
-- Jenkins (CI/CD pipeline)
-- Docker (containerization)
-- AWS EC2 (deployment environment)
-- Terraform (infrastructure as code)
-- Kubernetes (deployment validation)
-- Git & GitHub (version control)
+## CI/CD Workflow
+
+1. Developer pushes code to GitHub
+2. Jenkins pipeline is manually triggered
+3. Build process runs (dependencies installed)
+4. SonarQube quality checks are simulated
+5. Application is deployed to CAT
+6. After validation, build is promoted to staging
+7. Final promotion to production occurs in a controlled manner
 
 ---
 
-## What This Project Demonstrates
-- CI/CD pipeline execution
-- Deployment to EC2 environments
-- Containerized application management
-- Post-deployment validation
-- Troubleshooting production issues
-- Kubernetes deployment validation (pods, logs, failures)
+## Failure Scenarios Simulated
+
+- Build failure (dependency issues)
+- Application runtime failure
+- Port conflicts
+- Quality gate failure
+
+Each issue is diagnosed using logs and resolved before re-running the pipeline.
 
 ---
 
-## Real-World Context
-This project reflects real responsibilities from my role as a DevOps Engineer, including:
+## Infrastructure
 
-- Supporting Jenkins-based deployments
-- Validating releases across environments
-- Troubleshooting application and infrastructure issues
-- Managing EC2-based workloads
-- Assisting with containerized deployments
-- Verifying Kubernetes deployments during release cycles
+- AWS EC2 (application hosting)
+- Terraform (infrastructure provisioning)
+- IAM principles (least privilege concept)
 
 ---
 
-## Status
-🚧 In Progress — building infrastructure and deployment pipeline
+## Key Learnings
+
+- Understanding of CI/CD pipeline flow
+- Importance of controlled deployments
+- Troubleshooting using logs and system tools
+- Differences between manual and automated deployments
+
+---
+
+## Future Improvements
+
+- Docker containerization
+- Kubernetes (EKS) deployment
+- Monitoring with Prometheus and Grafana
